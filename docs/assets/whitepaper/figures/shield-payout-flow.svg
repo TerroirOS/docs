@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="fig-shield-payout-flow" role="img">
+  <title>Shield: Event-to-Payout Flow</title>
+  <desc>Horizontal workflow showing five steps from weather event detection through oracle signing, trigger evaluation, payout execution, to public report generation.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="52" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Shield: Event-to-Payout Flow</text>
+  <text x="600" y="76" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">End-to-end parametric insurance from climate event to producer disbursement</text>
+
+  <!-- Step numbers row -->
+  <!-- STEP 1: Weather Event -->
+  <rect x="30" y="140" width="200" height="320" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="130" cy="170" r="16" fill="#1A1A2E" opacity="0.08"/>
+  <text x="130" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1A1A2E">1</text>
+  <text x="130" y="206" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">DETECTION</text>
+
+  <!-- Weather icon: cloud + rain -->
+  <g transform="translate(130, 250)">
+    <ellipse cx="0" cy="-10" rx="24" ry="14" fill="#94A3B8" opacity="0.2" stroke="#94A3B8" stroke-width="1.5"/>
+    <ellipse cx="-14" cy="-4" rx="14" ry="10" fill="#94A3B8" opacity="0.2" stroke="#94A3B8" stroke-width="1.5"/>
+    <ellipse cx="14" cy="-4" rx="16" ry="11" fill="#94A3B8" opacity="0.2" stroke="#94A3B8" stroke-width="1.5"/>
+    <line x1="-10" y1="12" x2="-12" y2="24" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="0" y1="12" x2="-2" y2="24" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="10" y1="12" x2="8" y2="24" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <text x="130" y="300" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Weather Event</text>
+  <text x="130" y="324" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Drought, frost, excess</text>
+  <text x="130" y="342" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">rain, or heatwave</text>
+  <text x="130" y="366" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">detected by weather</text>
+  <text x="130" y="384" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">station network.</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="230" y1="300" x2="260" y2="300" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- STEP 2: Oracle Signs Event (Gold) -->
+  <rect x="272" y="140" width="200" height="320" rx="14" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="372" cy="170" r="16" fill="#C4A235" opacity="0.12"/>
+  <text x="372" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#C4A235">2</text>
+  <text x="372" y="206" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">ATTESTATION</text>
+
+  <!-- Key icon -->
+  <g transform="translate(372, 250)">
+    <circle cx="0" cy="-8" r="10" fill="none" stroke="#C4A235" stroke-width="2"/>
+    <line x1="0" y1="2" x2="0" y2="22" stroke="#C4A235" stroke-width="2"/>
+    <line x1="0" y1="14" x2="8" y2="14" stroke="#C4A235" stroke-width="2"/>
+    <line x1="0" y1="20" x2="6" y2="20" stroke="#C4A235" stroke-width="2"/>
+  </g>
+
+  <text x="372" y="300" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Oracle Signs Event</text>
+  <text x="372" y="324" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Independent data oracle</text>
+  <text x="372" y="342" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">cryptographically signs</text>
+  <text x="372" y="360" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">the observed parameter</text>
+  <text x="372" y="378" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">values on-chain.</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="472" y1="300" x2="502" y2="300" stroke="#C4A235" stroke-width="2.5" marker-end="url(#arr-d)"/>
+
+  <!-- STEP 3: Trigger Evaluation -->
+  <rect x="514" y="140" width="200" height="320" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="614" cy="170" r="16" fill="#1A1A2E" opacity="0.08"/>
+  <text x="614" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1A1A2E">3</text>
+  <text x="614" y="206" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">EVALUATION</text>
+
+  <!-- Gauge icon -->
+  <g transform="translate(614, 248)">
+    <path d="M -18 8 A 22 22 0 0 1 18 8" fill="none" stroke="#1A1A2E" stroke-width="2" stroke-linecap="round"/>
+    <line x1="0" y1="8" x2="8" y2="-8" stroke="#1A1A2E" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="0" cy="8" r="3" fill="#1A1A2E"/>
+  </g>
+
+  <text x="614" y="300" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Trigger Evaluation</text>
+  <text x="614" y="324" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Observed value compared</text>
+  <text x="614" y="342" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">against pre-defined h*</text>
+  <text x="614" y="360" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">threshold. Payout amount</text>
+  <text x="614" y="378" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">calculated from curve.</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="714" y1="300" x2="744" y2="300" stroke="#2D5A27" stroke-width="2.5" marker-end="url(#arr-g)"/>
+
+  <!-- STEP 4: Payout Execution (Green) -->
+  <rect x="756" y="140" width="200" height="320" rx="14" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="856" cy="170" r="16" fill="#2D5A27" opacity="0.12"/>
+  <text x="856" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2D5A27">4</text>
+  <text x="856" y="206" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">DISBURSEMENT</text>
+
+  <!-- Currency icon -->
+  <g transform="translate(856, 248)">
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#2D5A27" stroke-width="2"/>
+    <text x="0" y="6" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#2D5A27">$</text>
+  </g>
+
+  <text x="856" y="300" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Payout Execution</text>
+  <text x="856" y="324" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Enrolled producers in</text>
+  <text x="856" y="342" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">the affected zone are</text>
+  <text x="856" y="360" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">matched to the event.</text>
+  <text x="856" y="384" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Funds disbursed within</text>
+  <text x="856" y="402" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">48 hours automatically.</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="956" y1="300" x2="986" y2="300" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- STEP 5: Public Report -->
+  <rect x="998" y="140" width="170" height="320" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="1083" cy="170" r="16" fill="#1A1A2E" opacity="0.08"/>
+  <text x="1083" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1A1A2E">5</text>
+  <text x="1083" y="206" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">TRANSPARENCY</text>
+
+  <!-- Document icon -->
+  <g transform="translate(1083, 248)">
+    <rect x="-12" y="-16" width="24" height="32" rx="3" fill="none" stroke="#1A1A2E" stroke-width="1.5"/>
+    <line x1="-6" y1="-6" x2="6" y2="-6" stroke="#1A1A2E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="0" x2="6" y2="0" stroke="#1A1A2E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-6" y1="6" x2="2" y2="6" stroke="#1A1A2E" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <text x="1083" y="300" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Public Report</text>
+  <text x="1083" y="324" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Immutable record:</text>
+  <text x="1083" y="348" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">• Total disbursed</text>
+  <text x="1083" y="368" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">• Trigger rules used</text>
+  <text x="1083" y="388" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">• Producer outcomes</text>
+  <text x="1083" y="412" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">• Audit trail hash</text>
+
+  <!-- Bottom timeline bar -->
+  <rect x="60" y="530" width="1080" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <line x1="100" y1="560" x2="1100" y2="560" stroke="#E2DDD5" stroke-width="2"/>
+  <circle cx="130" cy="560" r="5" fill="#94A3B8"/>
+  <circle cx="372" cy="560" r="5" fill="#C4A235"/>
+  <circle cx="614" cy="560" r="5" fill="#94A3B8"/>
+  <circle cx="856" cy="560" r="5" fill="#2D5A27"/>
+  <circle cx="1083" cy="560" r="5" fill="#94A3B8"/>
+  <text x="130" y="578" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#6B7280">T+0h</text>
+  <text x="372" y="578" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#6B7280">T+1h</text>
+  <text x="614" y="578" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#6B7280">T+2h</text>
+  <text x="856" y="578" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#6B7280">T+48h</text>
+  <text x="1083" y="578" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#6B7280">T+72h</text>
+
+  <!-- Footer note -->
+  <text x="600" y="640" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#6B7280">No claims process required — payouts are fully automatic upon verified trigger conditions</text>
+</svg>

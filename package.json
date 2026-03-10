@@ -1,0 +1,16 @@
+{
+  "name": "terroiros-docs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "docs:sync": "tsx tools/sync_from_website.mts",
+    "docs:check": "node tools/check_docs.mjs"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.3"
+  }
+}

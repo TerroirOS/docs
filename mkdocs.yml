@@ -1,0 +1,117 @@
+site_name: TerroirOS Docs
+site_description: Documentation, architecture, APIs, research references, and contribution guidance for TerroirOS.
+site_url: https://terroiros.github.io/docs/
+repo_url: https://github.com/TerroirOS/docs
+edit_uri: edit/main/docs/
+docs_dir: docs
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: green
+      accent: amber
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+plugins:
+  - search
+nav:
+  - Home: index.md
+  - English:
+    - Start Here:
+        - "What is Terroir": en/start-here/what-is-terroir.md
+        - "Why trusted origin matters": en/start-here/why-trusted-origin-matters.md
+        - "Who Terroir serves": en/start-here/who-terroir-serves.md
+        - "Core concepts": en/start-here/core-concepts.md
+        - "Architecture overview": en/start-here/architecture.md
+        - "Implementation status": en/start-here/implementation-status.md
+    - Trust & Verification:
+        - "How verification works": en/trust-verification/how-verification-works.md
+        - "Trust model": en/trust-verification/trust-model.md
+        - "Data model": en/trust-verification/data-model.md
+        - "Batch schema": en/trust-verification/batch-schema.md
+        - "Attestation schema": en/trust-verification/attestation-schema.md
+        - "Hashing model": en/trust-verification/hashing-model.md
+        - "Verification logic": en/trust-verification/verification-logic.md
+        - "Example product passport": en/trust-verification/example-product-passport.md
+        - "Data handling and privacy": en/trust-verification/data-handling-and-privacy.md
+        - "Security and limitations": en/trust-verification/security-and-limitations.md
+        - "Consumer verification guide": en/trust-verification/consumer-verification-guide.md
+    - Workflows:
+        - "Producer journey": en/workflows/producer-journey.md
+        - "Buyer and importer guide": en/workflows/buyer-and-importer-guide.md
+        - "Integration guides": en/workflows/integrations.md
+        - "Certifier onboarding": en/workflows/certifier-onboarding.md
+        - "Exporter workflows": en/workflows/exporter-workflows.md
+    - Technical Reference:
+        - "Quickstart": en/technical-reference/quickstart.md
+        - "Registry contract": en/technical-reference/registry-contract.md
+        - "Contract events": en/technical-reference/contract-events.md
+        - "Function reference": en/technical-reference/function-reference.md
+        - "Deployment guide": en/technical-reference/deployment-guide.md
+        - "API authentication": en/technical-reference/api-authentication.md
+        - "Batch creation API": en/technical-reference/api-batch-creation.md
+        - "Attestation endpoints": en/technical-reference/api-attestation.md
+        - "Public verification API": en/technical-reference/api-verification.md
+        - "Reference app setup": en/technical-reference/app-setup.md
+        - "Environment variables": en/technical-reference/app-env-vars.md
+        - "Reference data-store shape": en/technical-reference/app-supabase.md
+        - "Reference frontend architecture": en/technical-reference/app-frontend.md
+    - Project & Governance:
+        - "Governance roadmap": en/project-governance/governance-roadmap.md
+        - "Licensing": en/project-governance/licensing.md
+        - "Contribution process": en/project-governance/contribution-process.md
+        - "FAQ": en/project-governance/faq.md
+        - "Glossary": en/project-governance/glossary.md
+        - "Research and sources": en/project-governance/research-and-sources.md
+  - ქართული:
+    - დაწყება:
+        - "რა არის Terroir": ka/start-here/what-is-terroir.md
+        - "ძირითადი კონცეფციები": ka/start-here/core-concepts.md
+        - "არქიტექტურის მიმოხილვა": ka/start-here/architecture.md
+        - "სწრაფი დაწყება": ka/start-here/quickstart.md
+    - ნდობა და ვერიფიკაცია:
+        - "მონაცემთა მოდელი": ka/trust-verification/data-model.md
+        - "ბეჩის სქემა": ka/trust-verification/batch-schema.md
+        - "ატესტაციის სქემა": ka/trust-verification/attestation-schema.md
+        - "ჰეშირების მოდელი": ka/trust-verification/hashing-model.md
+        - "ვერიფიკაციის ლოგიკა": ka/trust-verification/verification-logic.md
+    - სამუშაო ნაკადები:
+        - "ინტეგრაციის გზამკვლევები": ka/workflows/integrations.md
+        - "სერტიფიკატორის ონბორდინგი": ka/workflows/certifier-onboarding.md
+        - "ექსპორტერის სამუშაო ნაკადები": ka/workflows/exporter-workflows.md
+    - ტექნიკური რეფერენსი:
+        - "რეგისტრის კონტრაქტი": ka/technical-reference/registry-contract.md
+        - "კონტრაქტის ივენთები": ka/technical-reference/contract-events.md
+        - "ფუნქციების რეფერენსი": ka/technical-reference/function-reference.md
+        - "დეპლოის გზამკვლევი": ka/technical-reference/deployment-guide.md
+        - "API ავტენტიკაცია": ka/technical-reference/api-authentication.md
+        - "ბეჩის შექმნის API": ka/technical-reference/api-batch-creation.md
+        - "ატესტაციის ენდპოინტები": ka/technical-reference/api-attestation.md
+        - "საჯარო ვერიფიკაციის API": ka/technical-reference/api-verification.md
+        - "რეფერენს აპის დაყენება": ka/technical-reference/app-setup.md
+        - "გარემოს ცვლადები": ka/technical-reference/app-env-vars.md
+        - "Supabase სქემა": ka/technical-reference/app-supabase.md
+        - "ფრონტენდის არქიტექტურა": ka/technical-reference/app-frontend.md
+    - პროექტი და მმართველობა:
+        - "მართვის როუდმაპი": ka/project-governance/governance-roadmap.md
+        - "ლიცენზირება": ka/project-governance/licensing.md
+        - "კონტრიბუციის პროცესი": ka/project-governance/contribution-process.md
+  - Whitepaper:
+      - Overview: whitepaper/overview.md
+      - Full Paper: whitepaper/full-paper.md
+      - ქართული შეჯამება: whitepaper/ka-summary.md
+  - Research:
+      - Library: research/library.md
+  - Contributing: contributing.md

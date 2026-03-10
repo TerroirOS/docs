@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="fig-parametric-payout-curve" role="img">
+  <title>Illustrative Parametric Payout Curve</title>
+  <desc>Chart showing a piecewise parametric payout function with three zones: below threshold (no payout), linear ramp, and capped maximum payout.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+    <linearGradient id="rampGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2D5A27" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#2D5A27" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="48" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Illustrative Parametric Payout Curve</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">Payout as a function of observed event severity — threshold, ramp, and cap</text>
+
+  <!-- Chart area card -->
+  <rect x="80" y="100" width="1040" height="520" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!--
+    Chart coordinate system:
+    - Chart origin (0,0) at pixel (200, 540)
+    - X axis: 200 → 1060 (860px for data)
+    - Y axis: 540 → 150 (390px for data)
+    - h* threshold at x=420 (about 25% across)
+    - Cap starts at x=780 (about 67% across)
+    - P_max at y=190
+  -->
+
+  <!-- Y-axis -->
+  <line x1="200" y1="150" x2="200" y2="550" stroke="#1A1A2E" stroke-width="1.5"/>
+  <!-- X-axis -->
+  <line x1="200" y1="550" x2="1060" y2="550" stroke="#1A1A2E" stroke-width="1.5"/>
+  <!-- Y-axis arrow -->
+  <polygon points="200,148 196,158 204,158" fill="#1A1A2E"/>
+  <!-- X-axis arrow -->
+  <polygon points="1062,550 1052,546 1052,554" fill="#1A1A2E"/>
+
+  <!-- Y-axis label -->
+  <text x="130" y="350" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E" transform="rotate(-90 130 350)">Payout Amount</text>
+
+  <!-- X-axis label -->
+  <text x="630" y="600" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Event Severity</text>
+
+  <!-- Y-axis ticks -->
+  <line x1="195" y1="550" x2="200" y2="550" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="188" y="555" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">0</text>
+
+  <line x1="195" y1="460" x2="200" y2="460" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="188" y="465" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">25%</text>
+
+  <line x1="195" y1="370" x2="200" y2="370" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="188" y="375" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">50%</text>
+
+  <line x1="195" y1="280" x2="200" y2="280" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="188" y="285" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">75%</text>
+
+  <line x1="195" y1="190" x2="200" y2="190" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="188" y="195" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">100%</text>
+
+  <!-- X-axis ticks -->
+  <line x1="420" y1="550" x2="420" y2="556" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="420" y="572" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">h*</text>
+
+  <line x1="780" y1="550" x2="780" y2="556" stroke="#1A1A2E" stroke-width="1.5"/>
+
+  <!-- Grid lines (light) -->
+  <line x1="200" y1="460" x2="1060" y2="460" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="200" y1="370" x2="1060" y2="370" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="200" y1="280" x2="1060" y2="280" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="200" y1="190" x2="1060" y2="190" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- ZONE 1: Below threshold (gray background) -->
+  <rect x="200" y="150" width="220" height="400" fill="#94A3B8" opacity="0.04"/>
+
+  <!-- ZONE 2: Payout ramp (green gradient area under curve) -->
+  <path d="M 420 550 L 780 190 L 780 550 Z" fill="url(#rampGrad)"/>
+
+  <!-- ZONE 3: Capped region -->
+  <rect x="780" y="150" width="280" height="40" fill="#C4A235" opacity="0.06"/>
+
+  <!-- Threshold vertical dashed line -->
+  <line x1="420" y1="150" x2="420" y2="550" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Cap horizontal dashed line at P_max -->
+  <line x1="200" y1="190" x2="1060" y2="190" stroke="#C4A235" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- P_max label -->
+  <text x="1070" y="194" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#C4A235">P</text>
+  <text x="1082" y="198" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="9" fill="#C4A235">max</text>
+
+  <!-- THE PAYOUT CURVE -->
+  <!-- Flat at 0 from origin to threshold -->
+  <line x1="200" y1="550" x2="420" y2="550" stroke="#1A1A2E" stroke-width="3" stroke-linecap="round"/>
+  <!-- Linear ramp from threshold to cap -->
+  <line x1="420" y1="550" x2="780" y2="190" stroke="#2D5A27" stroke-width="3" stroke-linecap="round"/>
+  <!-- Flat at P_max (capped) -->
+  <line x1="780" y1="190" x2="1040" y2="190" stroke="#C4A235" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Dot at threshold breakpoint -->
+  <circle cx="420" cy="550" r="5" fill="#FFFFFF" stroke="#1A1A2E" stroke-width="2"/>
+  <!-- Dot at cap breakpoint -->
+  <circle cx="780" cy="190" r="5" fill="#FFFFFF" stroke="#2D5A27" stroke-width="2"/>
+
+  <!-- Zone labels -->
+  <!-- Below threshold label -->
+  <rect x="240" y="236" width="140" height="52" rx="8" fill="#F9F7F3" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="310" y="257" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="0.5">BELOW THRESHOLD</text>
+  <text x="310" y="276" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#6B7280">No payout</text>
+
+  <!-- Payout ramp label -->
+  <rect x="510" y="340" width="160" height="52" rx="8" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1"/>
+  <text x="590" y="361" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#2D5A27" letter-spacing="0.5">PAYOUT RAMP</text>
+  <text x="590" y="380" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Linear increase</text>
+
+  <!-- Capped label -->
+  <rect x="860" y="210" width="130" height="52" rx="8" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1"/>
+  <text x="925" y="231" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#C4A235" letter-spacing="0.5">CAPPED</text>
+  <text x="925" y="250" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Maximum payout</text>
+
+  <!-- Annotations -->
+  <!-- Threshold annotation -->
+  <text x="420" y="590" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">Threshold (h*)</text>
+
+  <!-- Slope annotation with arrow -->
+  <text x="560" y="458" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#2D5A27" transform="rotate(-46.5 560 458)">slope = P_max / (s_max − h*)</text>
+
+  <!-- Formula card at bottom -->
+  <rect x="280" y="640" width="640" height="52" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="600" y="664" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">
+    P(s) = 0  if s &lt; h*   |   P(s) = P_max · (s − h*) / (s_max − h*)  if h* ≤ s ≤ s_max   |   P(s) = P_max  if s &gt; s_max
+  </text>
+</svg>

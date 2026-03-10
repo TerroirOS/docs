@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="trust-failure-map" role="img">
+  <title>Where Trust Fails Across the Export Chain</title>
+  <desc>Horizontal supply-chain diagram highlighting three critical failure points: record fragmentation, relabeling and counterfeit, and slow dispute reconstruction.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="52" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Where Trust Fails Across the Export Chain</text>
+  <text x="600" y="76" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">Critical vulnerability points in agricultural product traceability</text>
+
+  <!-- ===== CHAIN NODES ===== -->
+  <!-- Y center of chain = 440 -->
+
+  <!-- Producer -->
+  <rect x="52" y="410" width="148" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="126" y="446" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Producer</text>
+
+  <!-- Arrow 1 -->
+  <line x1="200" y1="440" x2="232" y2="440" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Processor -->
+  <rect x="240" y="410" width="148" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="314" y="446" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Processor</text>
+
+  <!-- Arrow 2 -->
+  <line x1="388" y1="440" x2="420" y2="440" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Certifier -->
+  <rect x="428" y="410" width="148" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="502" y="446" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Certifier</text>
+
+  <!-- Arrow 3 -->
+  <line x1="576" y1="440" x2="608" y2="440" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Exporter -->
+  <rect x="616" y="410" width="148" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="690" y="446" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Exporter</text>
+
+  <!-- Arrow 4 -->
+  <line x1="764" y1="440" x2="796" y2="440" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Importer -->
+  <rect x="804" y="410" width="148" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="878" y="446" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Importer</text>
+
+  <!-- Arrow 5 -->
+  <line x1="952" y1="440" x2="984" y2="440" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Retail -->
+  <rect x="992" y="410" width="148" height="60" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1066" y="446" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Retail</text>
+
+  <!-- ===== FAILURE POINT 1: Record Fragmentation (gold) ===== -->
+  <!-- Between Producer and Processor, gap center ≈ 216 -->
+  <rect x="80" y="140" width="280" height="160" rx="14" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="112" cy="172" r="16" fill="#C4A235" opacity="0.18"/>
+  <text x="112" y="177" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#C4A235">!</text>
+  <text x="140" y="177" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">FAILURE POINT 1</text>
+  <text x="104" y="208" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Record Fragmentation</text>
+  <text x="104" y="234" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Paper ledgers, inconsistent identifiers,</text>
+  <text x="104" y="252" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">and manual handoffs break the data</text>
+  <text x="104" y="270" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">chain between farm and facility.</text>
+
+  <!-- Connector line down to gap -->
+  <line x1="220" y1="300" x2="220" y2="410" stroke="#C4A235" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr-d)"/>
+
+  <!-- ===== FAILURE POINT 2: Relabeling & Counterfeit (red) ===== -->
+  <!-- Between Exporter and Importer, gap center ≈ 780 -->
+  <rect x="460" y="140" width="280" height="160" rx="14" fill="#FEF2F1" stroke="#DC4A3E" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="492" cy="172" r="16" fill="#DC4A3E" opacity="0.15"/>
+  <text x="492" y="177" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#DC4A3E">!</text>
+  <text x="520" y="177" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#DC4A3E" letter-spacing="1">FAILURE POINT 2</text>
+  <text x="484" y="208" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Relabeling &amp; Counterfeit</text>
+  <text x="484" y="234" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Products cross borders without verifiable</text>
+  <text x="484" y="252" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">origin proof. Labels are swapped or</text>
+  <text x="484" y="270" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">fabricated during transit or warehousing.</text>
+
+  <!-- Connector line down to gap -->
+  <line x1="690" y1="300" x2="780" y2="410" stroke="#DC4A3E" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="780" cy="408" r="4" fill="#DC4A3E"/>
+
+  <!-- ===== FAILURE POINT 3: Slow Dispute Reconstruction (purple) ===== -->
+  <!-- After Importer, center ≈ 930 -->
+  <rect x="840" y="140" width="300" height="160" rx="14" fill="#F5F0F6" stroke="#6B4670" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="872" cy="172" r="16" fill="#6B4670" opacity="0.15"/>
+  <text x="872" y="177" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#6B4670">!</text>
+  <text x="900" y="177" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#6B4670" letter-spacing="1">FAILURE POINT 3</text>
+  <text x="864" y="208" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Slow Dispute Reconstruction</text>
+  <text x="864" y="234" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">When fraud or quality issues surface,</text>
+  <text x="864" y="252" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">weeks or months are needed to trace</text>
+  <text x="864" y="270" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">records across siloed participants.</text>
+
+  <!-- Connector line down to gap -->
+  <line x1="950" y1="300" x2="950" y2="410" stroke="#6B4670" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+
+  <!-- ===== BOTTOM CONTEXT BAR ===== -->
+  <rect x="120" y="530" width="960" height="56" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="600" y="555" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">RESULT</text>
+  <text x="600" y="575" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Buyers cannot independently verify origin claims — trust defaults to brand reputation or manual audits</text>
+
+  <!-- Connector from chain to result -->
+  <line x1="600" y1="470" x2="600" y2="530" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ===== LEGEND ===== -->
+  <text x="60" y="668" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">SEVERITY</text>
+  <circle cx="158" cy="664" r="6" fill="#C4A235" opacity="0.6"/>
+  <text x="172" y="668" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Data loss</text>
+  <circle cx="260" cy="664" r="6" fill="#DC4A3E" opacity="0.6"/>
+  <text x="274" y="668" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Fraud risk</text>
+  <circle cx="362" cy="664" r="6" fill="#6B4670" opacity="0.6"/>
+  <text x="376" y="668" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Operational delay</text>
+</svg>

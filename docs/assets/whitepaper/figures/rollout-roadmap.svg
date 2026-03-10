@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="fig-rollout-roadmap" role="img">
+  <title>Rollout Roadmap</title>
+  <desc>Four-phase horizontal timeline showing the rollout plan from Pilot through Integration, Scale, and Shield phases, with key milestones and deliverables for each.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="48" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Rollout Roadmap</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">Phased deployment from pilot to full parametric climate protection</text>
+
+  <!-- Horizontal timeline connector -->
+  <line x1="100" y1="160" x2="1100" y2="160" stroke="#E2DDD5" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Phase dots on timeline -->
+  <circle cx="190" cy="160" r="10" fill="#2D5A27" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="460" cy="160" r="10" fill="#2D5A27" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="730" cy="160" r="10" fill="#C4A235" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="1000" cy="160" r="10" fill="#C4A235" stroke="#FFFFFF" stroke-width="3"/>
+
+  <!-- Connecting segments (colored) -->
+  <line x1="200" y1="160" x2="450" y2="160" stroke="#2D5A27" stroke-width="3" stroke-linecap="round"/>
+  <line x1="470" y1="160" x2="720" y2="160" stroke="#2D5A27" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <line x1="740" y1="160" x2="990" y2="160" stroke="#C4A235" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Phase labels above timeline -->
+  <text x="190" y="136" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">PHASE 1</text>
+  <text x="460" y="136" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">PHASE 2</text>
+  <text x="730" y="136" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">PHASE 3</text>
+  <text x="1000" y="136" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">PHASE 4</text>
+
+  <!-- Vertical connectors from dots to cards -->
+  <line x1="190" y1="170" x2="190" y2="210" stroke="#2D5A27" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="460" y1="170" x2="460" y2="210" stroke="#2D5A27" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="730" y1="170" x2="730" y2="210" stroke="#C4A235" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="1000" y1="170" x2="1000" y2="210" stroke="#C4A235" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- PHASE 1: Pilot (Green) -->
+  <rect x="60" y="216" width="260" height="440" rx="14" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Phase header -->
+  <rect x="60" y="216" width="260" height="70" rx="14" fill="#2D5A27" opacity="0.08"/>
+  <rect x="60" y="272" width="260" height="14" rx="0" fill="#F0F5EE"/>
+  <text x="190" y="248" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#2D5A27">Pilot</text>
+  <text x="190" y="268" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Foundation &amp; Validation</text>
+
+  <!-- Milestone items -->
+  <g transform="translate(90, 316)">
+    <circle cx="0" cy="0" r="5" fill="#2D5A27" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#2D5A27"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Export Batch Passports</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Immutable provenance records</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">for each export batch</text>
+  </g>
+
+  <g transform="translate(90, 386)">
+    <circle cx="0" cy="0" r="5" fill="#2D5A27" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#2D5A27"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">QR Verification</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Consumer-facing scan-to-</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">verify product authenticity</text>
+  </g>
+
+  <g transform="translate(90, 456)">
+    <circle cx="0" cy="0" r="5" fill="#2D5A27" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#2D5A27"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">3–5 Producers</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Initial cohort of partner</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">producers for validation</text>
+  </g>
+
+  <!-- Status badge -->
+  <rect x="130" y="610" width="120" height="28" rx="14" fill="#2D5A27" opacity="0.12"/>
+  <text x="190" y="629" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#2D5A27">IN PROGRESS</text>
+
+  <!-- PHASE 2: Integration (Green) -->
+  <rect x="340" y="216" width="260" height="440" rx="14" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="340" y="216" width="260" height="70" rx="14" fill="#2D5A27" opacity="0.08"/>
+  <rect x="340" y="272" width="260" height="14" rx="0" fill="#F0F5EE"/>
+  <text x="470" y="248" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#2D5A27">Integration</text>
+  <text x="470" y="268" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Ecosystem Connectivity</text>
+
+  <g transform="translate(370, 316)">
+    <circle cx="0" cy="0" r="5" fill="#2D5A27" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#2D5A27"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Lab &amp; Certifier Attestations</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Third-party quality and</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">compliance data on-chain</text>
+  </g>
+
+  <g transform="translate(370, 386)">
+    <circle cx="0" cy="0" r="5" fill="#2D5A27" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#2D5A27"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Anomaly Analytics</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">ML-powered detection of</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">supply-chain irregularities</text>
+  </g>
+
+  <g transform="translate(370, 456)">
+    <circle cx="0" cy="0" r="5" fill="#2D5A27" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#2D5A27"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Institutional Onboarding</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Cooperatives, exporters, and</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">regulatory body integration</text>
+  </g>
+
+  <rect x="410" y="610" width="120" height="28" rx="14" fill="#94A3B8" opacity="0.15"/>
+  <text x="470" y="629" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#6B7280">PLANNED</text>
+
+  <!-- PHASE 3: Scale (Gold) -->
+  <rect x="620" y="216" width="260" height="440" rx="14" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="620" y="216" width="260" height="70" rx="14" fill="#C4A235" opacity="0.08"/>
+  <rect x="620" y="272" width="260" height="14" rx="0" fill="#FBF7ED"/>
+  <text x="750" y="248" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#C4A235">Scale</text>
+  <text x="750" y="268" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Multi-Region Expansion</text>
+
+  <g transform="translate(650, 316)">
+    <circle cx="0" cy="0" r="5" fill="#C4A235" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#C4A235"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Multi-Product Expansion</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Beyond wine: olive oil, honey,</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">specialty crops, and more</text>
+  </g>
+
+  <g transform="translate(650, 386)">
+    <circle cx="0" cy="0" r="5" fill="#C4A235" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#C4A235"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">NFC for High-Risk SKUs</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Tamper-evident NFC tags on</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">premium and counterfeit-prone items</text>
+  </g>
+
+  <g transform="translate(650, 456)">
+    <circle cx="0" cy="0" r="5" fill="#C4A235" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#C4A235"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Cross-Region Verification</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Multi-jurisdiction provenance</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">and compliance validation</text>
+  </g>
+
+  <rect x="690" y="610" width="120" height="28" rx="14" fill="#C4A235" opacity="0.12"/>
+  <text x="750" y="629" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#C4A235">FUTURE</text>
+
+  <!-- PHASE 4: Shield (Gold) -->
+  <rect x="900" y="216" width="260" height="440" rx="14" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <rect x="900" y="216" width="260" height="70" rx="14" fill="#C4A235" opacity="0.08"/>
+  <rect x="900" y="272" width="260" height="14" rx="0" fill="#FBF7ED"/>
+  <text x="1030" y="248" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#C4A235">Shield</text>
+  <text x="1030" y="268" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Climate Resilience Layer</text>
+
+  <g transform="translate(930, 316)">
+    <circle cx="0" cy="0" r="5" fill="#C4A235" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#C4A235"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Climate Triggers</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Oracle-attested weather data</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">for automated activation</text>
+  </g>
+
+  <g transform="translate(930, 386)">
+    <circle cx="0" cy="0" r="5" fill="#C4A235" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#C4A235"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Parametric Response</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">No-claims payout model based</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">on transparent payout curves</text>
+  </g>
+
+  <g transform="translate(930, 456)">
+    <circle cx="0" cy="0" r="5" fill="#C4A235" opacity="0.3"/>
+    <circle cx="0" cy="0" r="2" fill="#C4A235"/>
+    <text x="16" y="5" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Audited Disbursement</text>
+    <text x="16" y="24" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Immutable public audit trail</text>
+    <text x="16" y="40" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">for every payout event</text>
+  </g>
+
+  <rect x="970" y="610" width="120" height="28" rx="14" fill="#C4A235" opacity="0.12"/>
+  <text x="1030" y="629" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#C4A235">FUTURE</text>
+
+  <!-- Bottom note -->
+  <text x="600" y="698" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#6B7280">Each phase builds on the infrastructure and learnings of the previous, minimizing risk and maximizing feedback loops.</text>
+</svg>

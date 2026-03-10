@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="fig-basis-risk" role="img">
+  <title>Basis Risk: Index vs. Realized Loss</title>
+  <desc>Bar chart comparing parametric payouts against realized losses across six events, highlighting basis risk as the gap between index-based payments and actual producer losses.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+    <pattern id="goldHatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#C4A235" stroke-width="1.5" stroke-opacity="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="48" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Basis Risk: Index vs. Realized Loss</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">The gap between parametric payouts and actual producer losses across illustrative events</text>
+
+  <!-- Chart card -->
+  <rect x="80" y="95" width="1040" height="530" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Legend (top-right) -->
+  <rect x="820" y="112" width="270" height="68" rx="10" fill="#F9F7F3" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="840" y="133" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="0.5">LEGEND</text>
+  <rect x="840" y="143" width="20" height="12" rx="2" fill="#2D5A27" opacity="0.7"/>
+  <text x="868" y="154" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Parametric Payout</text>
+  <rect x="1000" y="143" width="20" height="12" rx="2" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="1000" y="143" width="20" height="12" rx="2" fill="url(#goldHatch)"/>
+  <text x="1028" y="154" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Realized Loss</text>
+  <rect x="840" y="162" width="12" height="12" rx="2" fill="#C4A235" opacity="0.15"/>
+  <text x="858" y="173" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Basis risk gap</text>
+
+  <!--
+    Chart coordinates:
+    Y-axis: 560 (bottom/0) to 170 (top/max) = 390px
+    X positions for 6 events, each group centered:
+    E1: 260, E2: 400, E3: 540, E4: 680, E5: 820, E6: 960
+    Bar width: 36 each, gap between pair: 8
+  -->
+
+  <!-- Y-axis -->
+  <line x1="180" y1="170" x2="180" y2="564" stroke="#1A1A2E" stroke-width="1.5"/>
+  <polygon points="180,168 176,178 184,178" fill="#1A1A2E"/>
+
+  <!-- X-axis -->
+  <line x1="180" y1="564" x2="1060" y2="564" stroke="#1A1A2E" stroke-width="1.5"/>
+
+  <!-- Y-axis label -->
+  <text x="120" y="370" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E" transform="rotate(-90 120 370)">Amount ($)</text>
+
+  <!-- Y-axis ticks and grid -->
+  <line x1="175" y1="564" x2="180" y2="564" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="168" y="569" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" fill="#6B7280">0</text>
+
+  <line x1="175" y1="466" x2="180" y2="466" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="168" y="471" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" fill="#6B7280">2k</text>
+  <line x1="180" y1="466" x2="1060" y2="466" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <line x1="175" y1="368" x2="180" y2="368" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="168" y="373" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" fill="#6B7280">4k</text>
+  <line x1="180" y1="368" x2="1060" y2="368" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <line x1="175" y1="270" x2="180" y2="270" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="168" y="275" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" fill="#6B7280">6k</text>
+  <line x1="180" y1="270" x2="1060" y2="270" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <line x1="175" y1="172" x2="180" y2="172" stroke="#1A1A2E" stroke-width="1.5"/>
+  <text x="168" y="177" text-anchor="end" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" fill="#6B7280">8k</text>
+  <line x1="180" y1="172" x2="1060" y2="172" stroke="#E2DDD5" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!--
+    Event data (payout, loss) — heights in px from baseline 564:
+    E1: payout=3k (147px), loss=2k (98px)     — overpayment
+    E2: payout=2k (98px),  loss=4.5k (221px)  — underpayment
+    E3: payout=5k (245px), loss=5.2k (255px)  — close match
+    E4: payout=1.5k (74px), loss=3.5k (172px) — underpayment
+    E5: payout=6k (294px), loss=4k (196px)    — overpayment
+    E6: payout=4k (196px), loss=6.5k (319px)  — underpayment
+  -->
+
+  <!-- E1 -->
+  <rect x="240" y="417" width="36" height="147" rx="3" fill="#2D5A27" opacity="0.7"/>
+  <rect x="280" y="466" width="36" height="98" rx="3" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="280" y="466" width="36" height="98" rx="3" fill="url(#goldHatch)"/>
+  <text x="278" y="584" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">E1</text>
+  <!-- Overpayment highlight -->
+  <rect x="236" y="417" width="84" height="49" rx="0" fill="#2D5A27" opacity="0.06"/>
+  <text x="278" y="407" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#2D5A27">+$1k over</text>
+
+  <!-- E2 -->
+  <rect x="380" y="466" width="36" height="98" rx="3" fill="#2D5A27" opacity="0.7"/>
+  <rect x="420" y="343" width="36" height="221" rx="3" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="420" y="343" width="36" height="221" rx="3" fill="url(#goldHatch)"/>
+  <text x="418" y="584" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">E2</text>
+  <!-- Underpayment highlight -->
+  <rect x="376" y="343" width="84" height="123" rx="0" fill="#C4A235" opacity="0.06"/>
+  <text x="418" y="333" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#C4A235">−$2.5k under</text>
+
+  <!-- E3 -->
+  <rect x="520" y="319" width="36" height="245" rx="3" fill="#2D5A27" opacity="0.7"/>
+  <rect x="560" y="309" width="36" height="255" rx="3" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="560" y="309" width="36" height="255" rx="3" fill="url(#goldHatch)"/>
+  <text x="558" y="584" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">E3</text>
+  <text x="558" y="299" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#6B7280">≈ match</text>
+
+  <!-- E4 -->
+  <rect x="660" y="490" width="36" height="74" rx="3" fill="#2D5A27" opacity="0.7"/>
+  <rect x="700" y="392" width="36" height="172" rx="3" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="700" y="392" width="36" height="172" rx="3" fill="url(#goldHatch)"/>
+  <text x="698" y="584" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">E4</text>
+  <!-- Underpayment highlight -->
+  <rect x="656" y="392" width="84" height="98" rx="0" fill="#C4A235" opacity="0.06"/>
+  <text x="698" y="382" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#C4A235">−$2k under</text>
+
+  <!-- E5 -->
+  <rect x="800" y="270" width="36" height="294" rx="3" fill="#2D5A27" opacity="0.7"/>
+  <rect x="840" y="368" width="36" height="196" rx="3" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="840" y="368" width="36" height="196" rx="3" fill="url(#goldHatch)"/>
+  <text x="838" y="584" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">E5</text>
+  <!-- Overpayment highlight -->
+  <rect x="796" y="270" width="84" height="98" rx="0" fill="#2D5A27" opacity="0.06"/>
+  <text x="838" y="260" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#2D5A27">+$2k over</text>
+
+  <!-- E6 -->
+  <rect x="940" y="368" width="36" height="196" rx="3" fill="#2D5A27" opacity="0.7"/>
+  <rect x="980" y="245" width="36" height="319" rx="3" fill="none" stroke="#C4A235" stroke-width="2"/>
+  <rect x="980" y="245" width="36" height="319" rx="3" fill="url(#goldHatch)"/>
+  <text x="978" y="584" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#1A1A2E">E6</text>
+  <!-- Underpayment highlight -->
+  <rect x="936" y="245" width="84" height="123" rx="0" fill="#C4A235" opacity="0.06"/>
+  <text x="978" y="235" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" font-weight="600" fill="#C4A235">−$2.5k under</text>
+
+  <!-- X-axis label -->
+  <text x="618" y="610" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1A1A2E">Events</text>
+
+  <!-- Basis risk annotation bracket for E2 -->
+  <line x1="462" y1="343" x2="470" y2="343" stroke="#C4A235" stroke-width="1.5"/>
+  <line x1="470" y1="343" x2="470" y2="466" stroke="#C4A235" stroke-width="1.5"/>
+  <line x1="462" y1="466" x2="470" y2="466" stroke="#C4A235" stroke-width="1.5"/>
+  <text x="480" y="400" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#C4A235">Basis</text>
+  <text x="480" y="412" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#C4A235">Risk</text>
+
+  <!-- Summary note card -->
+  <rect x="200" y="644" width="800" height="48" rx="10" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1"/>
+  <text x="600" y="672" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Basis risk is inherent to parametric models — transparent curve design and portfolio diversification help minimize its impact.</text>
+</svg>

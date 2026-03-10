@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="trace-data-model" role="img">
+  <title>Trace Data Model</title>
+  <desc>Entity-relationship diagram showing the Batch entity at center, connected to Producer, Evidence, Attestation, Verification Proof, and Scan Record entities.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="48" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Trace Data Model</text>
+  <text x="600" y="72" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">Core entities and relationships in the traceability schema</text>
+
+  <!-- ===== CENTRAL ENTITY: BATCH (green accent) ===== -->
+  <rect x="440" y="270" width="320" height="180" rx="14" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="302" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#2D5A27" letter-spacing="1">CORE ENTITY</text>
+  <text x="600" y="328" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1A1A2E">Batch</text>
+  <line x1="470" y1="342" x2="730" y2="342" stroke="#C7D7C3" stroke-width="1"/>
+  <text x="480" y="366" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">batch_id</text>
+  <text x="660" y="366" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">string · PK</text>
+  <text x="480" y="388" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">origin_region, variety, vintage</text>
+  <text x="480" y="410" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">volume_liters, harvest_date</text>
+  <text x="480" y="432" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">status, created_at</text>
+
+  <!-- ===== ENTITY: PRODUCER (top-left) ===== -->
+  <rect x="60" y="100" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="190" y="132" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1A1A2E">Producer</text>
+  <line x1="84" y1="144" x2="296" y2="144" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="84" y="168" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">producer_id</text>
+  <text x="230" y="168" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">string · PK</text>
+  <text x="84" y="190" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">name, region, license_ref</text>
+  <text x="84" y="212" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">verified_since</text>
+
+  <!-- Connector: Producer → Batch ("creates") -->
+  <path d="M 320 210 C 380 210 400 300 440 320" stroke="#2D5A27" stroke-width="2.5" fill="none" marker-end="url(#arr-g)"/>
+  <rect x="330" y="246" width="72" height="22" rx="6" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1"/>
+  <text x="366" y="261" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#2D5A27">creates</text>
+
+  <!-- ===== ENTITY: EVIDENCE (top-right) ===== -->
+  <rect x="880" y="100" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1010" y="132" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1A1A2E">Evidence</text>
+  <line x1="904" y1="144" x2="1116" y2="144" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="904" y="168" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">evidence_id</text>
+  <text x="1040" y="168" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">string · PK</text>
+  <text x="904" y="190" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">type, content_hash</text>
+  <text x="904" y="212" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">file_url, uploaded_at</text>
+
+  <!-- Connector: Batch → Evidence ("references") -->
+  <path d="M 760 310 C 820 310 840 210 880 200" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <rect x="790" y="244" width="88" height="22" rx="6" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="834" y="259" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A">references</text>
+
+  <!-- ===== ENTITY: ATTESTATION (right) ===== -->
+  <rect x="880" y="340" width="260" height="160" rx="14" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1010" y="372" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1A1A2E">Attestation</text>
+  <line x1="904" y1="384" x2="1116" y2="384" stroke="#E3D1A4" stroke-width="1"/>
+  <text x="904" y="408" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">attestation_id</text>
+  <text x="1040" y="408" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">string · PK</text>
+  <text x="904" y="430" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">issuer_did, claim_type</text>
+  <text x="904" y="452" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">signature, issued_at</text>
+  <text x="904" y="474" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">evidence_refs[]</text>
+
+  <!-- Connector: Batch → Attestation ("binds") -->
+  <line x1="760" y1="390" x2="880" y2="400" stroke="#C4A235" stroke-width="2.5" fill="none" marker-end="url(#arr-d)"/>
+  <rect x="790" y="378" width="60" height="22" rx="6" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1"/>
+  <text x="820" y="393" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A">binds</text>
+
+  <!-- ===== ENTITY: VERIFICATION PROOF (bottom-right) ===== -->
+  <rect x="760" y="560" width="280" height="140" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="900" y="592" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1A1A2E">Verification Proof</text>
+  <line x1="784" y1="604" x2="1016" y2="604" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="784" y="628" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">proof_id</text>
+  <text x="930" y="628" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">string · PK</text>
+  <text x="784" y="650" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">anchor_hash, registry_tx</text>
+  <text x="784" y="672" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">verified_at, status</text>
+
+  <!-- Connector: Batch → Verification Proof ("anchors") -->
+  <path d="M 660 450 C 660 520 760 560 770 580" stroke="#2D5A27" stroke-width="2.5" fill="none" marker-end="url(#arr-g)"/>
+  <rect x="680" y="504" width="72" height="22" rx="6" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1"/>
+  <text x="716" y="519" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#2D5A27">anchors</text>
+
+  <!-- ===== ENTITY: SCAN RECORD (bottom-left) ===== -->
+  <rect x="120" y="560" width="280" height="140" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="260" y="592" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1A1A2E">Scan Record</text>
+  <line x1="144" y1="604" x2="376" y2="604" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="144" y="628" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">scan_id</text>
+  <text x="290" y="628" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#94A3B8" font-style="italic">string · PK</text>
+  <text x="144" y="650" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">geo_lat, geo_lng, scanned_at</text>
+  <text x="144" y="672" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">user_agent, result</text>
+
+  <!-- Connector: Batch → Scan Record ("generates") -->
+  <path d="M 520 450 C 520 520 400 560 390 580" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <rect x="420" y="504" width="84" height="22" rx="6" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1"/>
+  <text x="462" y="519" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A">generates</text>
+
+  <!-- ===== LEGEND ===== -->
+  <text x="60" y="48" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">RELATIONSHIPS</text>
+  <line x1="60" y1="64" x2="90" y2="64" stroke="#2D5A27" stroke-width="2.5"/>
+  <text x="98" y="68" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Ownership / creation</text>
+  <line x1="60" y1="84" x2="90" y2="84" stroke="#C4A235" stroke-width="2.5"/>
+  <text x="98" y="88" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Attestation binding</text>
+  <line x1="60" y1="104" x2="90" y2="104" stroke="#94A3B8" stroke-width="2"/>
+  <text x="98" y="108" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="12" fill="#4A5568">Reference / output</text>
+</svg>
