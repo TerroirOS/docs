@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" id="system-overview" role="img">
+  <title>System Overview: Trace + Shield</title>
+  <desc>Two-column layout showing the Trace (current) and Shield (planned) modules of Terroir, with shared infrastructure beneath.</desc>
+  <defs>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#1A1A2E" flood-opacity="0.05"/></filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/></marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2D5A27"/></marker>
+    <marker id="arr-d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C4A235"/></marker>
+  </defs>
+  <rect width="1200" height="720" fill="#F9F7F3"/>
+
+  <!-- Title -->
+  <text x="600" y="52" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">System Overview: Trace + Shield</text>
+  <text x="600" y="76" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" fill="#6B7280">Modular architecture for transparency and climate resilience</text>
+
+  <!-- ===== LEFT COLUMN: TRACE ===== -->
+  <rect x="60" y="108" width="500" height="480" rx="14" fill="#F0F5EE" stroke="#C7D7C3" stroke-width="1.5" filter="url(#shadow)"/>
+  <!-- Module label -->
+  <text x="80" y="143" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#2D5A27" letter-spacing="1">CURRENT MODULE</text>
+  <text x="80" y="170" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Trace</text>
+
+  <!-- Sub-card 1 -->
+  <rect x="84" y="196" width="452" height="110" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="112" cy="228" r="14" fill="#2D5A27" opacity="0.12"/>
+  <text x="112" y="233" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2D5A27">1</text>
+  <text x="140" y="233" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Batch Passports &amp; Producer Records</text>
+  <text x="140" y="258" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Structured batch-level data with origin, variety,</text>
+  <text x="140" y="276" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">harvest date, and processing details per lot.</text>
+
+  <!-- Sub-card 2 -->
+  <rect x="84" y="322" width="452" height="110" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="112" cy="354" r="14" fill="#2D5A27" opacity="0.12"/>
+  <text x="112" y="359" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2D5A27">2</text>
+  <text x="140" y="359" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Issuer Attestations &amp; Evidence Binding</text>
+  <text x="140" y="384" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Certifiers and labs sign structured attestations;</text>
+  <text x="140" y="402" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">evidence (lab PDFs, photos) bound by content hash.</text>
+
+  <!-- Sub-card 3 -->
+  <rect x="84" y="448" width="452" height="110" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="112" cy="480" r="14" fill="#2D5A27" opacity="0.12"/>
+  <text x="112" y="485" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2D5A27">3</text>
+  <text x="140" y="485" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Public Verification &amp; Anomaly Analytics</text>
+  <text x="140" y="510" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">QR-scannable verification links; statistical anomaly</text>
+  <text x="140" y="528" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">detection flags inconsistent volumes or timing.</text>
+
+  <!-- ===== RIGHT COLUMN: SHIELD ===== -->
+  <rect x="640" y="108" width="500" height="480" rx="14" fill="#FBF7ED" stroke="#E3D1A4" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="660" y="143" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">PLANNED MODULE</text>
+  <text x="660" y="170" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1A1A2E">Shield</text>
+
+  <!-- Sub-card 1 -->
+  <rect x="664" y="196" width="452" height="110" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="692" cy="228" r="14" fill="#C4A235" opacity="0.15"/>
+  <text x="692" y="233" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#94785A">1</text>
+  <text x="720" y="233" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Event Triggers &amp; Weather Evidence</text>
+  <text x="720" y="258" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Satellite and station data ingested as structured</text>
+  <text x="720" y="276" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">events; thresholds trigger automatic alerts.</text>
+
+  <!-- Sub-card 2 -->
+  <rect x="664" y="322" width="452" height="110" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="692" cy="354" r="14" fill="#C4A235" opacity="0.15"/>
+  <text x="692" y="359" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#94785A">2</text>
+  <text x="720" y="359" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Program Rules &amp; Payout Governance</text>
+  <text x="720" y="384" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Parametric rules define coverage terms; multi-sig</text>
+  <text x="720" y="402" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">governance ensures fair and auditable payouts.</text>
+
+  <!-- Sub-card 3 -->
+  <rect x="664" y="448" width="452" height="110" rx="10" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <circle cx="692" cy="480" r="14" fill="#C4A235" opacity="0.15"/>
+  <text x="692" y="485" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#94785A">3</text>
+  <text x="720" y="485" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#1A1A2E">Public Reporting &amp; Audited Disbursement</text>
+  <text x="720" y="510" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Transparent fund flows with verifiable receipts;</text>
+  <text x="720" y="528" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">open dashboards for donors and participants.</text>
+
+  <!-- ===== GOLD CONNECTORS between columns ===== -->
+  <line x1="560" y1="251" x2="640" y2="251" stroke="#C4A235" stroke-width="2.5" marker-end="url(#arr-d)"/>
+  <line x1="640" y1="377" x2="560" y2="377" stroke="#C4A235" stroke-width="2.5" marker-end="url(#arr-d)"/>
+  <line x1="560" y1="503" x2="640" y2="503" stroke="#C4A235" stroke-width="2.5" marker-end="url(#arr-d)"/>
+
+  <!-- Connector labels -->
+  <text x="600" y="242" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#94785A" font-weight="600">DATA</text>
+  <text x="600" y="368" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#94785A" font-weight="600">RULES</text>
+  <text x="600" y="494" text-anchor="middle" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="10" fill="#94785A" font-weight="600">PROOFS</text>
+
+  <!-- ===== BOTTOM BAR: Shared Infrastructure ===== -->
+  <rect x="60" y="620" width="1080" height="68" rx="14" fill="#FFFFFF" stroke="#E2DDD5" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="100" y="650" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="11" font-weight="600" fill="#94785A" letter-spacing="1">SHARED INFRASTRUCTURE</text>
+  <text x="100" y="672" font-family="Inter, Segoe UI, Helvetica, sans-serif" font-size="13" fill="#4A5568">Issuer Registry  ·  Credential Schemas  ·  Verification Rules  ·  Open APIs  ·  Audit Log</text>
+
+  <!-- Vertical connectors from columns to bottom bar -->
+  <line x1="310" y1="588" x2="310" y2="620" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="890" y1="588" x2="890" y2="620" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

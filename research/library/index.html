@@ -1,0 +1,3577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation, architecture, APIs, research references, and contribution guidance for TerroirOS.">
+      
+      
+      
+        <link rel="canonical" href="https://terroiros.github.io/docs/research/library/">
+      
+      
+        <link rel="prev" href="../../whitepaper/ka-summary/">
+      
+      
+        <link rel="next" href="../../contributing/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Research Library - TerroirOS Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#research-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TerroirOS Docs" class="md-header__button md-logo" aria-label="TerroirOS Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TerroirOS Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Research Library
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="amber"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/TerroirOS/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TerroirOS Docs" class="md-nav__button md-logo" aria-label="TerroirOS Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TerroirOS Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/TerroirOS/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    English
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Start Here
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Start Here
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/start-here/what-is-terroir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is Terroir
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/start-here/why-trusted-origin-matters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Why trusted origin matters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/start-here/who-terroir-serves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Who Terroir serves
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/start-here/core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/start-here/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/start-here/implementation-status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implementation status
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Trust & Verification
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Trust & Verification
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/how-verification-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How verification works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/trust-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trust model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/batch-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/attestation-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Attestation schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/hashing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hashing model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/verification-logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verification logic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/example-product-passport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example product passport
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/data-handling-and-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data handling and privacy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/security-and-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security and limitations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/trust-verification/consumer-verification-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Consumer verification guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Workflows
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Workflows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/workflows/producer-journey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Producer journey
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/workflows/buyer-and-importer-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buyer and importer guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/workflows/integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integration guides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/workflows/certifier-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Certifier onboarding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/workflows/exporter-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exporter workflows
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Technical Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/registry-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Registry contract
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/contract-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contract events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/function-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/deployment-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployment guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/api-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/api-batch-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch creation API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/api-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Attestation endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/api-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Public verification API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/app-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reference app setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/app-env-vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Environment variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/app-supabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reference data-store shape
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/technical-reference/app-frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reference frontend architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project & Governance
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Project & Governance
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/project-governance/governance-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/project-governance/licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licensing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/project-governance/contribution-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contribution process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/project-governance/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/project-governance/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../en/project-governance/research-and-sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Research and sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    ქართული
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ქართული
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    დაწყება
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            დაწყება
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/start-here/what-is-terroir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    რა არის Terroir
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/start-here/core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ძირითადი კონცეფციები
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/start-here/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    არქიტექტურის მიმოხილვა
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/start-here/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    სწრაფი დაწყება
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ნდობა და ვერიფიკაცია
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            ნდობა და ვერიფიკაცია
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/trust-verification/data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    მონაცემთა მოდელი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/trust-verification/batch-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ბეჩის სქემა
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/trust-verification/attestation-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ატესტაციის სქემა
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/trust-verification/hashing-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ჰეშირების მოდელი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/trust-verification/verification-logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ვერიფიკაციის ლოგიკა
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    სამუშაო ნაკადები
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            სამუშაო ნაკადები
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/workflows/integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ინტეგრაციის გზამკვლევები
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/workflows/certifier-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    სერტიფიკატორის ონბორდინგი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/workflows/exporter-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ექსპორტერის სამუშაო ნაკადები
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ტექნიკური რეფერენსი
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            ტექნიკური რეფერენსი
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/registry-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    რეგისტრის კონტრაქტი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/contract-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    კონტრაქტის ივენთები
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/function-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ფუნქციების რეფერენსი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/deployment-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    დეპლოის გზამკვლევი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/api-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API ავტენტიკაცია
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/api-batch-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ბეჩის შექმნის API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/api-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ატესტაციის ენდპოინტები
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/api-verification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    საჯარო ვერიფიკაციის API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/app-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    რეფერენს აპის დაყენება
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/app-env-vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    გარემოს ცვლადები
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/app-supabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supabase სქემა
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/technical-reference/app-frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ფრონტენდის არქიტექტურა
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    პროექტი და მმართველობა
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            პროექტი და მმართველობა
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/project-governance/governance-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    მართვის როუდმაპი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/project-governance/licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ლიცენზირება
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ka/project-governance/contribution-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    კონტრიბუციის პროცესი
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Whitepaper
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Whitepaper
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whitepaper/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whitepaper/full-paper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Full Paper
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whitepaper/ka-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ქართული შეჯამება
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Research
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Library
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#georgian-wine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Georgian Wine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Georgian Wine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#record-revenues-from-wine-and-spirits-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Record revenues from wine and spirits exports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-8000-year-old-uninterrupted-tradition-of-wine-production-in-georgia" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 8,000-year-old uninterrupted tradition of wine production in Georgia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traditional-georgian-winemaking-method-in-qvevri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traditional Georgian winemaking method in qvevri
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annual-report-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annual report 2020
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-counterfeit-and-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-Counterfeit and GI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anti-Counterfeit and GI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counterfeit-wine-labeled-with-appellation-of-origin-kindzmarauli-revealed-in-russia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counterfeit wine labeled with appellation of origin 'Kindzmarauli' revealed in Russia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counterfeit-georgian-wine-batch-removed-from-sale-in-ukraine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counterfeit Georgian wine batch removed from sale in Ukraine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#law-of-georgia-on-appellations-of-origin-and-geographical-indications-of-goods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Law of Georgia on appellations of origin and geographical indications of goods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#georgia-strengthens-the-protection-of-its-geographical-indications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Georgia strengthens the protection of its geographical indications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-trade-in-fakes-a-worrying-threat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global trade in fakes: A worrying threat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-global-trade-in-fakes-2025-global-trends-and-enforcement-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping global trade in fakes 2025: Global trends and enforcement challenges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#climate-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Climate Resilience
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Climate Resilience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-than-5800-vineyard-owners-received-state-assistance-after-hail-damage-in-kakheti" class="md-nav__link">
+    <span class="md-ellipsis">
+      More than 5,800 vineyard owners received state assistance after hail damage in Kakheti
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agroinsurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agroinsurance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-insurance-for-agricultural-resilience-promises-challenges-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index insurance for agricultural resilience: Promises, challenges and solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-index-insurance-a-viable-solution-for-disaster-risk-financing-in-agriculture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is index insurance a viable solution for disaster risk financing in agriculture?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#climate-resilience-pathways-for-european-wine-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Climate resilience pathways for European wine regions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provenance-and-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provenance and Traceability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provenance and Traceability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain-technology-for-sustainable-supply-chain-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blockchain technology for sustainable supply chain management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-farmers-participate-in-traceability-systems-a-systematic-review-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do farmers participate in traceability systems? A systematic review and future directions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-public-goods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Public Goods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digital Public Goods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpg-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPG Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-to-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default to open
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funding-and-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funding and Safeguards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funding and Safeguards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#venture-fund" class="md-nav__link">
+    <span class="md-ellipsis">
+      Venture Fund
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gift-acceptance-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gift acceptance policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#georgian-wine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Georgian Wine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Georgian Wine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#record-revenues-from-wine-and-spirits-exports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Record revenues from wine and spirits exports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-8000-year-old-uninterrupted-tradition-of-wine-production-in-georgia" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 8,000-year-old uninterrupted tradition of wine production in Georgia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traditional-georgian-winemaking-method-in-qvevri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traditional Georgian winemaking method in qvevri
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annual-report-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Annual report 2020
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-counterfeit-and-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-Counterfeit and GI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anti-Counterfeit and GI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#counterfeit-wine-labeled-with-appellation-of-origin-kindzmarauli-revealed-in-russia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counterfeit wine labeled with appellation of origin 'Kindzmarauli' revealed in Russia
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counterfeit-georgian-wine-batch-removed-from-sale-in-ukraine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counterfeit Georgian wine batch removed from sale in Ukraine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#law-of-georgia-on-appellations-of-origin-and-geographical-indications-of-goods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Law of Georgia on appellations of origin and geographical indications of goods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#georgia-strengthens-the-protection-of-its-geographical-indications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Georgia strengthens the protection of its geographical indications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-trade-in-fakes-a-worrying-threat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global trade in fakes: A worrying threat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapping-global-trade-in-fakes-2025-global-trends-and-enforcement-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping global trade in fakes 2025: Global trends and enforcement challenges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#climate-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      Climate Resilience
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Climate Resilience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-than-5800-vineyard-owners-received-state-assistance-after-hail-damage-in-kakheti" class="md-nav__link">
+    <span class="md-ellipsis">
+      More than 5,800 vineyard owners received state assistance after hail damage in Kakheti
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agroinsurance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agroinsurance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index-insurance-for-agricultural-resilience-promises-challenges-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Index insurance for agricultural resilience: Promises, challenges and solutions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-index-insurance-a-viable-solution-for-disaster-risk-financing-in-agriculture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Is index insurance a viable solution for disaster risk financing in agriculture?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#climate-resilience-pathways-for-european-wine-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Climate resilience pathways for European wine regions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provenance-and-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provenance and Traceability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provenance and Traceability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain-technology-for-sustainable-supply-chain-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blockchain technology for sustainable supply chain management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-farmers-participate-in-traceability-systems-a-systematic-review-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do farmers participate in traceability systems? A systematic review and future directions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-public-goods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Public Goods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digital Public Goods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dpg-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPG Standard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-to-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default to open
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funding-and-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funding and Safeguards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funding and Safeguards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#venture-fund" class="md-nav__link">
+    <span class="md-ellipsis">
+      Venture Fund
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gift-acceptance-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gift acceptance policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="research-library">Research Library<a class="headerlink" href="#research-library" title="Permanent link">&para;</a></h1>
+<p>Evidence sources that support Terroir whitepaper claims and architecture decisions.</p>
+<h2 id="georgian-wine">Georgian Wine<a class="headerlink" href="#georgian-wine" title="Permanent link">&para;</a></h2>
+<h3 id="record-revenues-from-wine-and-spirits-exports">Record revenues from wine and spirits exports<a class="headerlink" href="#record-revenues-from-wine-and-spirits-exports" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2025</li>
+<li><strong>Cited in:</strong> Abstract, Executive Summary, Overview, Rollout, Conclusion</li>
+<li><strong>Source:</strong> <a href="https://wine.gov.ge/En/News/38181">https://wine.gov.ge/En/News/38181</a></li>
+<li><strong>APA:</strong> National Wine Agency of Georgia. (2025, January 20). Record revenues from wine and spirits exports. https://wine.gov.ge/En/News/38181</li>
+</ul>
+<p><strong>Summary:</strong> Official 2024 export results for Georgian wine and spirits, including volume, revenue, and destination-country growth.</p>
+<p><strong>Why it matters:</strong> Provides the export-exposure baseline used to justify why counterfeit risk and verification matter at border and distributor level.</p>
+<h3 id="the-8000-year-old-uninterrupted-tradition-of-wine-production-in-georgia">The 8,000-year-old uninterrupted tradition of wine production in Georgia<a class="headerlink" href="#the-8000-year-old-uninterrupted-tradition-of-wine-production-in-georgia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2023</li>
+<li><strong>Cited in:</strong> Overview</li>
+<li><strong>Source:</strong> <a href="https://wine.gov.ge/En/News/37074">https://wine.gov.ge/En/News/37074</a></li>
+<li><strong>APA:</strong> National Wine Agency of Georgia. (2023, June 6). The 8,000-year-old uninterrupted tradition of wine production in Georgia. https://wine.gov.ge/En/News/37074</li>
+</ul>
+<p><strong>Summary:</strong> National Wine Agency background on Georgia's long viticulture history and its large base of indigenous grape varieties.</p>
+<p><strong>Why it matters:</strong> Supports the paper's cultural and biodiversity rationale for starting the provenance pilot in Georgia.</p>
+<h3 id="traditional-georgian-winemaking-method-in-qvevri">Traditional Georgian winemaking method in qvevri<a class="headerlink" href="#traditional-georgian-winemaking-method-in-qvevri" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2013</li>
+<li><strong>Cited in:</strong> Overview</li>
+<li><strong>Source:</strong> <a href="https://ich.unesco.org/en/decisions/8.COM/8.13">https://ich.unesco.org/en/decisions/8.COM/8.13</a></li>
+<li><strong>APA:</strong> UNESCO. (2013). Decision of the Intergovernmental Committee: Traditional Georgian winemaking method in qvevri. https://ich.unesco.org/en/decisions/8.COM/8.13</li>
+</ul>
+<p><strong>Summary:</strong> UNESCO recognition of qvevri winemaking as an element of intangible cultural heritage.</p>
+<p><strong>Why it matters:</strong> Anchors the whitepaper's claim that Georgian wine identity is not only commercial but also cultural and institutional.</p>
+<h3 id="annual-report-2020">Annual report 2020<a class="headerlink" href="#annual-report-2020" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2020</li>
+<li><strong>Cited in:</strong> Overview, Trace, Appendix: Formula Notes and Implementation Glossary</li>
+<li><strong>Source:</strong> <a href="https://wine.gov.ge/En/Files/Download/12996">https://wine.gov.ge/En/Files/Download/12996</a></li>
+<li><strong>APA:</strong> National Wine Agency of Georgia. (2020). Annual report 2020. https://wine.gov.ge/En/Files/Download/12996</li>
+</ul>
+<p><strong>Summary:</strong> National Wine Agency report covering vintage accounting, quality-control reforms, and lab methods used to detect falsification.</p>
+<p><strong>Why it matters:</strong> Provides direct evidence that Terroir can align with existing transparency and lab-control workflows instead of inventing a parallel bureaucracy.</p>
+<h2 id="anti-counterfeit-and-gi">Anti-Counterfeit and GI<a class="headerlink" href="#anti-counterfeit-and-gi" title="Permanent link">&para;</a></h2>
+<h3 id="counterfeit-wine-labeled-with-appellation-of-origin-kindzmarauli-revealed-in-russia">Counterfeit wine labeled with appellation of origin 'Kindzmarauli' revealed in Russia<a class="headerlink" href="#counterfeit-wine-labeled-with-appellation-of-origin-kindzmarauli-revealed-in-russia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2018</li>
+<li><strong>Cited in:</strong> Abstract, Problem, Overview, Trace, Threats</li>
+<li><strong>Source:</strong> <a href="https://www.sakpatenti.gov.ge/en/news/5309/">https://www.sakpatenti.gov.ge/en/news/5309/</a></li>
+<li><strong>APA:</strong> National Intellectual Property Center of Georgia (Sakpatenti). (2018, August 9). Counterfeit wine labeled with appellation of origin 'Kindzmarauli' revealed in Russia. https://www.sakpatenti.gov.ge/en/news/5309/</li>
+</ul>
+<p><strong>Summary:</strong> Cross-border enforcement case involving counterfeit bottles using a protected Georgian appellation.</p>
+<p><strong>Why it matters:</strong> Shows that Georgian wine counterfeiting is documented and enforceable, not a hypothetical future risk.</p>
+<h3 id="counterfeit-georgian-wine-batch-removed-from-sale-in-ukraine">Counterfeit Georgian wine batch removed from sale in Ukraine<a class="headerlink" href="#counterfeit-georgian-wine-batch-removed-from-sale-in-ukraine" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2018</li>
+<li><strong>Cited in:</strong> Problem</li>
+<li><strong>Source:</strong> <a href="https://wine.gov.ge/En/News/25735">https://wine.gov.ge/En/News/25735</a></li>
+<li><strong>APA:</strong> National Wine Agency of Georgia. (2018, December 31). Counterfeit Georgian wine batch removed from sale in Ukraine. https://wine.gov.ge/En/News/25735</li>
+</ul>
+<p><strong>Summary:</strong> Official notice that counterfeit Georgian wine was identified and removed from the Ukrainian market.</p>
+<p><strong>Why it matters:</strong> Supports the paper's argument that verification has to work across jurisdictions and import markets.</p>
+<h3 id="law-of-georgia-on-appellations-of-origin-and-geographical-indications-of-goods">Law of Georgia on appellations of origin and geographical indications of goods<a class="headerlink" href="#law-of-georgia-on-appellations-of-origin-and-geographical-indications-of-goods" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 1999</li>
+<li><strong>Cited in:</strong> Overview, Trace, Governance</li>
+<li><strong>Source:</strong> <a href="https://www.wipo.int/wipolex/en/text/217274">https://www.wipo.int/wipolex/en/text/217274</a></li>
+<li><strong>APA:</strong> World Intellectual Property Organization. (1999). Law of Georgia on appellations of origin and geographical indications of goods. WIPO Lex. https://www.wipo.int/wipolex/en/text/217274</li>
+</ul>
+<p><strong>Summary:</strong> The Georgian legal framework governing appellations of origin and geographical indications.</p>
+<p><strong>Why it matters:</strong> Establishes that Terroir complements an existing GI regime rather than replacing it with a technical system.</p>
+<h3 id="georgia-strengthens-the-protection-of-its-geographical-indications">Georgia strengthens the protection of its geographical indications<a class="headerlink" href="#georgia-strengthens-the-protection-of-its-geographical-indications" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2025</li>
+<li><strong>Cited in:</strong> Governance</li>
+<li><strong>Source:</strong> <a href="https://www.wipo.int/web/wipo-magazine/articles/georgia-strengthens-the-protection-of-its-geographical-indications-67406">https://www.wipo.int/web/wipo-magazine/articles/georgia-strengthens-the-protection-of-its-geographical-indications-67406</a></li>
+<li><strong>APA:</strong> World Intellectual Property Organization. (2025, February 25). Georgia strengthens the protection of its geographical indications. https://www.wipo.int/web/wipo-magazine/articles/georgia-strengthens-the-protection-of-its-geographical-indications-67406</li>
+</ul>
+<p><strong>Summary:</strong> WIPO coverage of Georgia's continuing international GI protection posture.</p>
+<p><strong>Why it matters:</strong> Shows institutional momentum around origin protection and strengthens the case for digital enforcement accelerators.</p>
+<h3 id="global-trade-in-fakes-a-worrying-threat">Global trade in fakes: A worrying threat<a class="headerlink" href="#global-trade-in-fakes-a-worrying-threat" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> report</li>
+<li><strong>Year:</strong> 2022</li>
+<li><strong>Cited in:</strong> Problem, Overview</li>
+<li><strong>Source:</strong> <a href="https://www.oecd.org/en/publications/global-trade-in-fakes-a-worrying-threat_74c81154-en.html">https://www.oecd.org/en/publications/global-trade-in-fakes-a-worrying-threat_74c81154-en.html</a></li>
+<li><strong>APA:</strong> Organisation for Economic Co-operation and Development. (2022). Global trade in fakes: A worrying threat. OECD Publishing. https://www.oecd.org/en/publications/global-trade-in-fakes-a-worrying-threat_74c81154-en.html</li>
+</ul>
+<p><strong>Summary:</strong> OECD synthesis of the scale, channels, and enforcement implications of counterfeit trade.</p>
+<p><strong>Why it matters:</strong> Provides the macro-level trade context for why authenticity infrastructure has real economic value.</p>
+<h3 id="mapping-global-trade-in-fakes-2025-global-trends-and-enforcement-challenges">Mapping global trade in fakes 2025: Global trends and enforcement challenges<a class="headerlink" href="#mapping-global-trade-in-fakes-2025-global-trends-and-enforcement-challenges" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> report</li>
+<li><strong>Year:</strong> 2025</li>
+<li><strong>Cited in:</strong> Problem, Threats</li>
+<li><strong>Source:</strong> <a href="https://doi.org/10.1787/94d3b29f-en">https://doi.org/10.1787/94d3b29f-en</a></li>
+<li><strong>APA:</strong> Organisation for Economic Co-operation and Development, &amp; European Union Intellectual Property Office. (2025). Mapping global trade in fakes 2025: Global trends and enforcement challenges. OECD Publishing. https://doi.org/10.1787/94d3b29f-en</li>
+</ul>
+<p><strong>Summary:</strong> Joint OECD and EUIPO report on counterfeit flows, market trends, and enforcement conditions.</p>
+<p><strong>Why it matters:</strong> Supports the whitepaper's claim that counterfeit risk is structurally cross-border and increasingly sophisticated.</p>
+<h2 id="climate-resilience">Climate Resilience<a class="headerlink" href="#climate-resilience" title="Permanent link">&para;</a></h2>
+<h3 id="more-than-5800-vineyard-owners-received-state-assistance-after-hail-damage-in-kakheti">More than 5,800 vineyard owners received state assistance after hail damage in Kakheti<a class="headerlink" href="#more-than-5800-vineyard-owners-received-state-assistance-after-hail-damage-in-kakheti" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2023</li>
+<li><strong>Cited in:</strong> Problem, Shield</li>
+<li><strong>Source:</strong> <a href="https://mepa.gov.ge/Ge/News/Details/21399">https://mepa.gov.ge/Ge/News/Details/21399</a></li>
+<li><strong>APA:</strong> Ministry of Environmental Protection and Agriculture of Georgia. (2023, November 17). More than 5,800 vineyard owners received state assistance after hail damage in Kakheti. https://mepa.gov.ge/Ge/News/Details/21399</li>
+</ul>
+<p><strong>Summary:</strong> Official account of one-time aid distributed to vineyard owners after September 2023 hail events in Kakheti.</p>
+<p><strong>Why it matters:</strong> Establishes the concrete climate-shock response case that the upcoming Shield module is designed to improve.</p>
+<h3 id="agroinsurance">Agroinsurance<a class="headerlink" href="#agroinsurance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> official</li>
+<li><strong>Year:</strong> 2025</li>
+<li><strong>Cited in:</strong> Overview, Shield, Rollout</li>
+<li><strong>Source:</strong> <a href="https://www.rda.gov.ge/en/projects/Agroinsurance">https://www.rda.gov.ge/en/projects/Agroinsurance</a></li>
+<li><strong>APA:</strong> Rural Development Agency. (2025). Agroinsurance. https://www.rda.gov.ge/en/projects/Agroinsurance</li>
+</ul>
+<p><strong>Summary:</strong> Program page describing Georgia's subsidized agricultural insurance framework, including coverage areas and co-financing.</p>
+<p><strong>Why it matters:</strong> Shows that Georgia already has a policy and operational substrate for risk-transfer collaboration, making Shield more realistic as a next module.</p>
+<h3 id="index-insurance-for-agricultural-resilience-promises-challenges-and-solutions">Index insurance for agricultural resilience: Promises, challenges and solutions<a class="headerlink" href="#index-insurance-for-agricultural-resilience-promises-challenges-and-solutions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> report</li>
+<li><strong>Year:</strong> 2022</li>
+<li><strong>Cited in:</strong> Abstract, Executive Summary, Problem, Overview, Shield, Conclusion, Appendix: Formula Notes and Implementation Glossary</li>
+<li><strong>Source:</strong> <a href="https://openknowledge.worldbank.org/entities/publication/1be2d7c8-9b22-5753-bf07-4a0df44bc09d">https://openknowledge.worldbank.org/entities/publication/1be2d7c8-9b22-5753-bf07-4a0df44bc09d</a></li>
+<li><strong>APA:</strong> World Bank. (2022). Index insurance for agricultural resilience: Promises, challenges and solutions. https://openknowledge.worldbank.org/entities/publication/1be2d7c8-9b22-5753-bf07-4a0df44bc09d</li>
+</ul>
+<p><strong>Summary:</strong> World Bank synthesis on why index-based and parametric mechanisms help, where they fail, and how basis risk should be treated.</p>
+<p><strong>Why it matters:</strong> Provides the conceptual backbone for the Shield trigger, payout, and basis-risk sections.</p>
+<h3 id="is-index-insurance-a-viable-solution-for-disaster-risk-financing-in-agriculture">Is index insurance a viable solution for disaster risk financing in agriculture?<a class="headerlink" href="#is-index-insurance-a-viable-solution-for-disaster-risk-financing-in-agriculture" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> report</li>
+<li><strong>Year:</strong> 2019</li>
+<li><strong>Cited in:</strong> Executive Summary, Shield, Appendix: Formula Notes and Implementation Glossary</li>
+<li><strong>Source:</strong> <a href="https://openknowledge.worldbank.org/entities/publication/e6cc66f4-a4b3-5355-bded-ef17f4f9d4b3">https://openknowledge.worldbank.org/entities/publication/e6cc66f4-a4b3-5355-bded-ef17f4f9d4b3</a></li>
+<li><strong>APA:</strong> World Bank. (2019). Is index insurance a viable solution for disaster risk financing in agriculture? https://openknowledge.worldbank.org/entities/publication/e6cc66f4-a4b3-5355-bded-ef17f4f9d4b3</li>
+</ul>
+<p><strong>Summary:</strong> World Bank note on operational design, index quality, and implementation limits of agricultural index insurance.</p>
+<p><strong>Why it matters:</strong> Supports the decision to frame Shield first as an auditable relief and resilience layer rather than a fully regulated insurance product.</p>
+<h3 id="climate-resilience-pathways-for-european-wine-regions">Climate resilience pathways for European wine regions<a class="headerlink" href="#climate-resilience-pathways-for-european-wine-regions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> paper</li>
+<li><strong>Year:</strong> 2024</li>
+<li><strong>Cited in:</strong> Problem, Shield</li>
+<li><strong>Source:</strong> <a href="https://www.nature.com/articles/s43016-024-00988-w">https://www.nature.com/articles/s43016-024-00988-w</a></li>
+<li><strong>APA:</strong> Moriondo, M., Ferrise, R., Dibari, C., and colleagues. (2024). Climate resilience pathways for European wine regions. Nature Food, 5, 551-562. https://www.nature.com/articles/s43016-024-00988-w</li>
+</ul>
+<p><strong>Summary:</strong> Peer-reviewed assessment of climate risk and adaptation pathways across wine-producing regions.</p>
+<p><strong>Why it matters:</strong> Gives scientific grounding to the whitepaper's claim that resilience data belongs alongside provenance data in vineyard-adjacent infrastructure.</p>
+<h2 id="provenance-and-traceability">Provenance and Traceability<a class="headerlink" href="#provenance-and-traceability" title="Permanent link">&para;</a></h2>
+<h3 id="blockchain-technology-for-sustainable-supply-chain-management">Blockchain technology for sustainable supply chain management<a class="headerlink" href="#blockchain-technology-for-sustainable-supply-chain-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> paper</li>
+<li><strong>Year:</strong> 2021</li>
+<li><strong>Cited in:</strong> Executive Summary, Architecture, Appendix: Formula Notes and Implementation Glossary</li>
+<li><strong>Source:</strong> <a href="https://doi.org/10.1016/j.tifs.2021.08.012">https://doi.org/10.1016/j.tifs.2021.08.012</a></li>
+<li><strong>APA:</strong> Paliwal, V., Chandra, S., &amp; Sharma, S. (2021). Blockchain technology for sustainable supply chain management: A systematic literature review and a classification framework. Trends in Food Science &amp; Technology, 109, 637-660. https://doi.org/10.1016/j.tifs.2021.08.012</li>
+</ul>
+<p><strong>Summary:</strong> Systematic review of blockchain architectures, benefits, and implementation pitfalls in supply-chain settings.</p>
+<p><strong>Why it matters:</strong> Supports the paper's selective, minimal on-chain strategy instead of a maximalist blockchain narrative.</p>
+<h3 id="do-farmers-participate-in-traceability-systems-a-systematic-review-and-future-directions">Do farmers participate in traceability systems? A systematic review and future directions<a class="headerlink" href="#do-farmers-participate-in-traceability-systems-a-systematic-review-and-future-directions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> paper</li>
+<li><strong>Year:</strong> 2025</li>
+<li><strong>Cited in:</strong> Abstract, Executive Summary, Overview, Trace, Threats, Conclusion, Appendix: Formula Notes and Implementation Glossary</li>
+<li><strong>Source:</strong> <a href="https://onlinelibrary.wiley.com/doi/10.1111/joss.70034">https://onlinelibrary.wiley.com/doi/10.1111/joss.70034</a></li>
+<li><strong>APA:</strong> Banstola, A., Ghimeray, A. K., &amp; Ahmad, T. (2025). Do farmers participate in traceability systems? A systematic review and future directions. Journal of the Science of Food and Agriculture, 105(4), 2036-2049. https://onlinelibrary.wiley.com/doi/10.1111/joss.70034</li>
+</ul>
+<p><strong>Summary:</strong> Systematic review focused on farmer adoption incentives, frictions, and governance conditions in traceability systems.</p>
+<p><strong>Why it matters:</strong> Supports the paper's operational requirement that Trace remain batch-first, low-friction, and aligned to existing workflows.</p>
+<h2 id="digital-public-goods">Digital Public Goods<a class="headerlink" href="#digital-public-goods" title="Permanent link">&para;</a></h2>
+<h3 id="dpg-standard">DPG Standard<a class="headerlink" href="#dpg-standard" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> policy</li>
+<li><strong>Year:</strong> 2025</li>
+<li><strong>Cited in:</strong> Abstract, Executive Summary, Overview, Architecture, Governance, Rollout, Conclusion</li>
+<li><strong>Source:</strong> <a href="https://www.digitalpublicgoods.net/standard/">https://www.digitalpublicgoods.net/standard/</a></li>
+<li><strong>APA:</strong> Digital Public Goods Alliance. (2025). DPG Standard. https://www.digitalpublicgoods.net/standard/</li>
+</ul>
+<p><strong>Summary:</strong> The standard used to assess whether a project qualifies as a digital public good.</p>
+<p><strong>Why it matters:</strong> Gives a concrete governance target for Terroir as open infrastructure rather than a closed vendor product.</p>
+<h3 id="default-to-open">Default to open<a class="headerlink" href="#default-to-open" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> report</li>
+<li><strong>Year:</strong> 2024</li>
+<li><strong>Cited in:</strong> Abstract, Executive Summary, Overview, Governance, Conclusion</li>
+<li><strong>Source:</strong> <a href="https://www.undp.org/publications/default-open">https://www.undp.org/publications/default-open</a></li>
+<li><strong>APA:</strong> United Nations Development Programme. (2024). Default to open. https://www.undp.org/publications/default-open</li>
+</ul>
+<p><strong>Summary:</strong> UNDP publication arguing for open digital systems, reusable infrastructure, and public-interest software.</p>
+<p><strong>Why it matters:</strong> Supports the whitepaper's insistence that trust infrastructure should remain forkable, inspectable, and reusable.</p>
+<h2 id="funding-and-safeguards">Funding and Safeguards<a class="headerlink" href="#funding-and-safeguards" title="Permanent link">&para;</a></h2>
+<h3 id="venture-fund">Venture Fund<a class="headerlink" href="#venture-fund" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> policy</li>
+<li><strong>Year:</strong> 2026</li>
+<li><strong>Cited in:</strong> Overview</li>
+<li><strong>Source:</strong> <a href="https://www.unicefinnovationfund.org/">https://www.unicefinnovationfund.org/</a></li>
+<li><strong>APA:</strong> UNICEF Office of Innovation. (2026). Venture Fund. https://www.unicefinnovationfund.org/</li>
+</ul>
+<p><strong>Summary:</strong> Official UNICEF innovation funding surface describing equity-free support for open-source and frontier-technology ventures.</p>
+<p><strong>Why it matters:</strong> Supports the paper's funder-facing positioning and explains why open-source infrastructure language matters.</p>
+<h3 id="gift-acceptance-policy">Gift acceptance policy<a class="headerlink" href="#gift-acceptance-policy" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Type:</strong> policy</li>
+<li><strong>Year:</strong> 2026</li>
+<li><strong>Cited in:</strong> Governance</li>
+<li><strong>Source:</strong> <a href="https://www.unicefusa.org/about/finances-and-accountability/gift-acceptance-policy">https://www.unicefusa.org/about/finances-and-accountability/gift-acceptance-policy</a></li>
+<li><strong>APA:</strong> UNICEF USA. (2026). Gift acceptance policy. https://www.unicefusa.org/about/finances-and-accountability/gift-acceptance-policy</li>
+</ul>
+<p><strong>Summary:</strong> Policy page describing sensitive and excluded funding relationships, including alcohol-company restrictions.</p>
+<p><strong>Why it matters:</strong> Explains why the paper frames Terroir as rural livelihoods and resilience infrastructure, not alcohol promotion.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
